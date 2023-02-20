@@ -1,7 +1,9 @@
 :root {
   --clr-primary-400: hsl(228, 39%, 23%);
 
+  --clr-accent-500: hsl(12, 60%, 45%);
   --clr-accent-400: hsl(12, 88%, 59%);
+  --clr-accent-200: hsl(12, 92%, 72%);
   --clr-accent-100: hsl(13, 100%, 96%);
 
   --clr-neutral-900: hsl(233, 12%, 13%);
@@ -180,10 +182,12 @@ picture {
 
 .fs-primary-heading {
   font-size: var(--fs-primary-heading);
+  line-height: 1.1;
 }
 
 .fs-secondary-heading {
   font-size: var(--fs-secondary-heading);
+  line-height: 1.1;
 }
 
 .fs-300 {
@@ -242,10 +246,36 @@ body {
   font-size: var(--fs-400);
   color: var(--clr-primary-400);
   background-color: var(--clr-neutral-100);
-  /* 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 1.75rem 1rem; */
+}
+
+/* button */
+
+.button {
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 25px;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: --fs-button;
+  line-height: 1;
+  font-weight: var(--fw-bold);
+  background-color: var(--clr-accent-400);
+  color: var(--clr-neutral-100);
+  box-shadow: 0 1rem 0.75rem -0.75rem var(--clr-accent-500);
+}
+
+.button[data-type="inverted"] {
+  background-color: var(--clr-neutral-100);
+  color: var(--clr-accent-400);
+}
+
+.button:hover,
+.button:focus {
+  background-color: var(--clr-accent-200);
+}
+
+.button[data-type="inverted"]:hover,
+.button[data-type="inverted"]:focus {
+  background-color: var(--clr-accent-100);
+  color: var(--clr-accent-200);
 }
