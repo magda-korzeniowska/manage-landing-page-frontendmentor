@@ -193,6 +193,7 @@ picture {
   font-weight: var(--fw-bold);
 }
 
+
 .fs-primary-heading {
   font-size: var(--fs-primary-heading);
   line-height: 1.1;
@@ -202,6 +203,7 @@ picture {
   font-size: var(--fs-secondary-heading);
   line-height: 1.1;
 }
+
 
 .fs-300 {
   font-size: var(--fs-300);
@@ -218,6 +220,7 @@ picture {
 .fs-600 {
   font-size: var(--fs-600);
 }
+
 
 .padding-block-900 {
   padding-block: var(--size-900);
@@ -249,6 +252,16 @@ picture {
   margin-inline: auto;
 }
 
+/* every sibling but the first one */
+/* the same as :where(.block-flow>:not(:last-child)) - where because of low specificity */
+.block-flow>*+* {
+  margin-top: var(--flow-spacer, 2rem);
+}
+
+.block-flow--tight {
+  --flow-spacer: 1rem;
+}
+
 .even-columns {
   display: grid;
   gap: 1rem;
@@ -269,6 +282,15 @@ body {
   font-size: var(--fs-400);
   color: var(--clr-primary-400);
   background-color: var(--clr-neutral-100);
+}
+
+p:not([class]) {
+  opacity: 0.5;
+  max-width: 33ch;
+}
+
+p[data-width="wide"] {
+  max-width: 42ch;
 }
 
 /* button */
