@@ -252,6 +252,37 @@ picture {
   margin-inline: auto;
 }
 
+.even-columns {
+  display: grid;
+  gap: var(--gap-spacer, 1rem);
+}
+
+.bigger-gap {
+  --gap-spacer: 2rem;
+}
+
+@media (min-width: 50em) {
+  .even-columns {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+}
+
+.justify-self-end {
+  justify-self: end;
+}
+
+@media (min-width: 50em) {
+  .justify-self-end-md {
+    justify-self: end;
+  }
+}
+
+.vertical-align-center {
+  align-items: center;
+}
+
+
 /* every sibling but the first one */
 /* the same as :where(.block-flow>:not(:last-child)) - where because of low specificity */
 .block-flow>*+* {
@@ -260,18 +291,6 @@ picture {
 
 .block-flow--tight {
   --flow-spacer: 1rem;
-}
-
-.even-columns {
-  display: grid;
-  gap: 1rem;
-}
-
-@media (min-width: 50em) {
-  .even-columns {
-    grid-auto-flow: column;
-    grid-auto-columns: 1fr;
-  }
 }
 
 /* general styling */
@@ -410,5 +429,33 @@ p[data-width="wide"] {
 
   .mobile-nav-toggle[data-open] .icon-close {
     display: block;
+  }
+}
+
+/* cta */
+.cta {
+  position: relative;
+  text-align: center;
+}
+
+@media (min-width: 50em) {
+  .cta {
+    text-align: left;
+  }
+}
+
+.cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    url('/images/bg-simplify-section-mobile.svg');
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 50em) {
+  .cta::before {
+    background-image:
+      url('/images/bg-simplify-section-desktop.svg');
   }
 }
