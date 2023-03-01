@@ -8,7 +8,8 @@
 
   --clr-neutral-900: hsl(233, 12%, 13%);
   --clr-neutral-300: hsl(227, 12%, 61%);
-  --clr-neutral-100: hsl(0, 0%, 98%);
+  --clr-neutral-200: hsl(0, 0%, 98%);
+  --clr-neutral-100: hsl(0, 0%, 100%);
 
   --ff-base: 'Be Vietnam Pro', sans-serif;
 
@@ -40,6 +41,7 @@
   --size-600: 2rem;
   --size-700: 3rem;
   --size-800: 4rem;
+  --size-850: 4.5rem;
   --size-900: 5rem;
 }
 
@@ -288,6 +290,10 @@ picture {
 
 .text-center {
   text-align: center;
+}
+
+.text-center p {
+  margin-inline: auto;
 }
 
 @media (max-width: 50em) {
@@ -653,4 +659,43 @@ input:where([type="text"], [type="email"]) {
     z-index: -1;
     box-shadow: 4rem 0px 0px 0px var(--bg);
   }
+}
+
+/* slider */
+
+.slider {
+  display: flex;
+  gap: var(--size-700);
+  list-style: none;
+}
+
+.slider>* {
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+@media (min-width: 35em) {
+  .slider>* {
+    width: 45%;
+  }
+}
+
+@media (min-width: 50em) {
+  .slider>* {
+    width: 30%;
+  }
+}
+
+.slider-content {
+  background: var(--clr-neutral-200);
+  padding: var(--size-700) var(--size-600);
+}
+
+.slider img {
+  width: var(--size-850);
+  position: relative;
+  margin-inline: auto;
+  top: calc(var(--size-850) / 2);
+  /* transform: translate(-50%, -50%); */
+
 }
