@@ -44,6 +44,7 @@
   --size-800: 4rem;
   --size-850: 4.5rem;
   --size-900: 5rem;
+  --size-990: 10.5rem;
 }
 
 @media (min-width: 47em) {
@@ -140,7 +141,6 @@ picture {
   width: 1px;
 }
 
-
 .text-primary-400 {
   color: var(--clr-primary-400);
 }
@@ -164,7 +164,6 @@ picture {
 .text-neutral-900 {
   color: var(--clr-neutral-900);
 }
-
 
 .bg-primary-400 {
   background-color: var(--clr-primary-400);
@@ -231,6 +230,9 @@ picture {
   font-size: var(--fs-600);
 }
 
+.padding-block-990 {
+  padding-block: var(--size-990);
+}
 
 .padding-block-900 {
   padding-block: var(--size-900);
@@ -250,6 +252,16 @@ picture {
 
 .margin-bottom-900 {
   margin-block-end: var(--size-900);
+}
+
+.margin-bottom-700 {
+  margin-block-end: var(--size-700);
+}
+
+@media (max-width: 47em) {
+  .padding-block-600-sm {
+    padding-block: var(--size-600);
+  }
 }
 
 .mx-auto {
@@ -630,6 +642,13 @@ input:where([type="text"], [type="email"]) {
   counter-reset: count;
   margin-inline: auto;
   width: fit-content;
+  --flow-spacer: 3rem;
+}
+
+@media (min-width: 47em) {
+  .numbered-items {
+    --flow-spacer: 2.5rem;
+  }
 }
 
 .numbered-items li {
@@ -689,6 +708,13 @@ input:where([type="text"], [type="email"]) {
 }
 
 /* slider */
+
+@media (min-width: 47em) {
+  .carousel {
+    padding-block-start: var(--size-900);
+    padding-block-end: var(--size-990);
+  }
+}
 
 .slider {
   display: flex;
@@ -785,7 +811,7 @@ input:where([type="text"], [type="email"]) {
   z-index: -1;
   position: absolute;
   width: 85%;
-  max-height: 70vh;
+  max-height: 60vh;
   top: 0;
   right: 0;
   aspect-ratio: 1 / 1.2;
@@ -795,6 +821,15 @@ input:where([type="text"], [type="email"]) {
 }
 
 @media (min-width: 47em) {
+  .hero {
+    padding-block-start: var(--size-990);
+  }
+
+  .hero__image img {
+    position: relative;
+    top: -3rem;
+  }
+
   .hero__image::before {
     width: 45%;
   }
